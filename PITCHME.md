@@ -1,75 +1,167 @@
 ---
 marp: true
-title: Marp CLI example
-description: Hosting Marp slide deck on the web
-theme: uncover
-paginate: true
-_paginate: false
 ---
 
-![bg](./assets/gradient.jpg)
+# How Browser Works + Renders
 
-# <!--fit--> Marp CLI example
+![bg](https://pbs.twimg.com/media/E3sXKUHVoAEpnUU?format=jpg&name=small)
 
-Hosting Marp slide deck on the web
-
-https://github.com/yhatt/marp-cli-example
-
-<style scoped>a { color: #eee; }</style>
-
-<!-- This is presenter note. You can write down notes through HTML comment. -->
+*2021.Dec.*
+Product Team
+FE engineer
+박세문
 
 ---
 
-![Marp bg 60%](https://raw.githubusercontent.com/marp-team/marp/master/marp.png)
+# 시작하며
+
+## How Browser works
+
+- Tali Garsiel이
+- [HTML5ROCKS](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)에 작성한 글 (10년전)
 
 ---
 
-![bg](#123)
-![](#fff)
+## Why
 
-##### <!--fit--> [Marp CLI](https://github.com/marp-team/marp-cli) + [GitHub Pages](https://github.com/pages) | [Netlify](https://www.netlify.com/) | [Vercel](https://vercel.com/)
+- Performance
+- Expandable concept
 
-##### <!--fit--> 👉 The easiest way to host<br />your Marp deck on the web
-
----
-
-![bg right 60%](https://icongr.am/octicons/mark-github.svg)
-
-## **[GitHub Pages](https://github.com/pages)**
-
-#### Ready to write & host your deck!
-
-[![Use this as template h:1.5em](https://img.shields.io/badge/-Use%20this%20as%20template-brightgreen?style=for-the-badge&logo=github)](https://github.com/yhatt/marp-cli-example/generate)
 
 ---
 
-![bg right 60%](https://icongr.am/simple/netlify.svg?colored)
+# Good To know
 
-## **[Netlify](https://www.netlify.com/)**
+아래에 대해서 알고 있으면 좋습니다
 
-#### Ready to write & host your deck!
+- Tree
 
-[![Deploy to Netlify h:1.5em](./assets/netlify-deploy-button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yhatt/marp-cli-example)
-
----
-
-![bg right 60%](https://icongr.am/simple/zeit.svg)
-
-## **[Vercel](https://vercel.com/)**
-
-#### Ready to write & host your deck!
-
-[![Deploy to Vercel h:1.5em](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/yhatt/marp-cli-example)
+![bg right](./assets/tree.png)
 
 ---
 
-### <!--fit--> :ok_hand:
+- Composition
+
+![bg right](./assets/compositing.png)
+
+
 
 ---
 
-![bg 40% opacity blur](https://avatars1.githubusercontent.com/u/3993388?v=4)
+# What is Browser
 
-### Created by Yuki Hattori ([@yhatt](https://github.com/yhatt))
+![bg right 90%](./assets/interface.png)
 
-https://github.com/yhatt/marp-cli-example
+___
+
+
+# Browser's High level structure
+
+![bg left 90%](./assets/layers.png)
+- 사용자 인터페이스
+- 브라우저 엔진
+- 렌더링 엔진
+- 통신
+- JSInterpreter
+- Data Persistence
+
+---
+
+# Rendering?
+
+![bg right 90%](./assets/rendering.jpeg)
+
+
+---
+
+# Rendering in Browser
+
+![bg left vertical 60%](./assets/blink.jpg)
+![bg left vertical 30%](./assets/gecko.png)
+![bg left vertical 30%](./assets/webkit.jpeg)
+
+---
+
+# Main flow
+
+![bg right 100%](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/flow.png)
+
+1. Parse HTML -> DOM Tree
+2. Parse CSS & styles -> attact to Dom Tree
+3. Build Render Tree
+4. Layout Render Tree
+5. Draw Render Tree
+
+---
+
+![w:1200 ](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/webkitflow.png)
+
+---
+
+# HTML Parser
+
+- [Naver D2 blog](https://d2.naver.com/helloworld/59361)
+- [HTML5Rocks](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
+- [Chromium inside Browser Pt3](https://developers.google.com/web/updates/2018/09/inside-browser-part3?hl=ko)
+
+- `.html` -> `DOM tree`
+---
+
+![w:1200](https://developers.google.com/web/updates/images/inside-browser/part3/dom.png?hl=ko)
+
+
+---
+
+# CSS Parser 
+
+![bg right 90%](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/image023.png)
+
+- [Creating Render tree](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=ko)
+
+---
+
+# Render Tree
+
+```
+class RenderObject{
+  virtual void layout();
+  virtual void paint(PaintInfo);
+  virtual void rect repaintRect();
+  Node* node;  //the DOM node
+  RenderStyle* style;  // the computed style
+  RenderLayer* containgLayer; //the containing z-index layer
+}
+``` 
+
+---
+![w:1200](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png?hl=ko)
+
+
+---
+
+# Layout
+
+---
+
+# Paint 
+
+---
+
+# Performance
+
+- [Reference](https://web.dev/why-speed-matters/) 
+  - 한글페이지 있음. 그러나 엔지니어는 영어로 보는걸 추천, 번역이 왈도체...
+
+---
+
+# Loading performance
+
+### TBC
+
+---
+
+# Rendering performance
+
+### TBC
+
+---
