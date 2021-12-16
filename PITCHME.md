@@ -32,31 +32,6 @@ FE engineer
   - 왜 하는지, 어떻게 해야 하는지 알아야 제대로 된 성능 향상을 꾀할 수 있다.
 - Expandable concept
   - 웹 뿐만 아니라 native application, network fetching 까지 확장 가능
-
-
----
-
-# Good To know
-
-아래에 대해서 알고 있으면 좋습니다
-
-- Tree structure
-
-![bg right](./assets/tree.png)
-
----
-
-- Compositing
-
-![bg right](./assets/compositing.png)
-
----
-
-- IO cost
-- Network cost
-- Hardware acceleration
-- Multi process/Single process program
-
 ---
 
 # What is Browser
@@ -161,6 +136,10 @@ class RenderObject{
 
 # Layout
 
+![bg right 100%](https://lh3.googleusercontent.com/proxy/mY-ymqfG8qZD0Lz4SBxfUKuY29MO_Tc1_obSdDl_A3qnTwevEXuqpHFnTEj18v3efgxZ1tWlRxN_Andsh0nP03XnlAKAE8OXJrPWIjk9AvI7)
+
+---
+
 ![bg left 100%](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/layout-viewport.png)
 - 현재까지 본 것: 어떤 node가 그려질지(혹은 아닐지), node의 style을 계산
 - device의 viewport안에서 position, size를 calculate해야 한다 => this is `Layout`
@@ -194,11 +173,27 @@ class RenderObject{
 ---
 # Paint 
 
+![bg right 100%](https://w.namu.la/s/f86bd816540834b0c512eb9f106a230e2066a2c9ced758a8cbbb781718d51c5140e4b7d3f764dab03f12b74c082db4ad60a8ec4e9cea9945349ff7e7848670cd12048f35f425a3e4a65adfd54a027f394a86593ff32c2dbf27b957487ce7d67e)
+
+---
+
+
+![bg](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FBw2nC%2Fbtq1vhlNUFq%2FJ4XsKhYefQ1ZmfNGkIWuf0%2Fimg.png)
+
+---
+
+![bg 100%](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdcqL53%2Fbtq1ovzqHzb%2FtZTSavKK6xNEwaffuyPqC1%2Fimg.png)
+
+
+---
+
+![bg 100%](https://developers.google.com/web/updates/images/inside-browser/part3/paint.png)
+
 ---
 
 # Summary
 
-![Image](./assets/critical_rendering_path.png)
+![Image 100%](./assets/critical_rendering_path.png)
 
 ---
 
@@ -214,8 +209,8 @@ class RenderObject{
 
 ![Image](./assets/construction_2.png)
 
-
 ---
+
 
 ### Construction Part
 - 브라우저가 이해할 수 있는 브라우저만의 언어로 바꾸는 작업 파트입니다.
